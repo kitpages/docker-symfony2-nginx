@@ -1,11 +1,22 @@
 FROM ubuntu:14.04
 
-MAINTAINER Thierry Piaf <thierry@piaf.eu>
+MAINTAINER Manuel Görlich <mgoerlich1990@gmail.com>
 
-RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y openssh-server htop vim
-RUN apt-get install -y curl htop nginx php5-fpm mongodb php5-imagick php5-gd curl php5-mongo php5-cli php5-curl php5-mcrypt php5-intl php5-xdebug
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+RUN apt-get update && apt-get -y install \
+    curl \
+    git \
+    htop \
+    nginx \
+    php5 \
+    php5-cli \
+    php5-intl \
+    php5-fpm \
+    php5-pgsql \
+    vim
+
+RUN curl -sS https://getcomposer.org/installer | php -- \
+             --install-dir=/usr/local/bin \
+             --filename=composer
 
 RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php5/fpm/php.ini
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
@@ -17,6 +28,5 @@ ADD start.sh /root/start.sh
 VOLUME ["/var/www", "/var/log/nginx/"]
 
 EXPOSE 80
-EXPOSE 22
 
 CMD ["/bin/bash", "/root/start.sh"]
