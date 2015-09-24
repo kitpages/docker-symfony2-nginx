@@ -13,4 +13,7 @@ chmod 777 app/cache
 chmod 777 app/logs
 
 service php5-fpm start
+
+ln -sf /dev/stdout /var/log/nginx/access.log
+ln -sf /dev/stderr /var/log/nginx/error.log
 nginx
