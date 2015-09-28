@@ -13,7 +13,8 @@ RUN apt-get update && apt-get -y install \
     php5-intl \
     php5-fpm \
     php5-pgsql \
-    php5-mysql
+    php5-mysql \
+    php5-sqlite
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
