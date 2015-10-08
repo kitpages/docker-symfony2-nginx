@@ -5,6 +5,12 @@ chmod 755 -R .
 rm -rf app/cache/*
 php app/console c:c --env=prod --no-debug
 php app/console c:w
+
+if [ -n "$SF_DB_MIGRATE" ]
+  then
+  php app/console doctrine:migration:migrate -n
+fi
+
 php app/console assets:install --symlink web/
 php app/console assetic:dump web/
 chown -R www-data:www-data app/cache
