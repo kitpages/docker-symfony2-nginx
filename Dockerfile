@@ -3,6 +3,7 @@ FROM debian:jessie
 MAINTAINER Elie Charra <elie.charra [at] kitpages.fr>
 
 RUN apt-get update && apt-get -y install \
+    sudo \
     curl \
     git \
     htop \
