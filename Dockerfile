@@ -26,8 +26,6 @@ RUN echo 'clear_env = no' >> /etc/php5/fpm/pool.d/www.conf &&  sed -i -e "s/;cgi
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN echo 'root:root' | chpasswd
 
-RUN curl -sSL https://get.docker.com/builds/Linux/x86_64/docker-latest.tgz | tar zxf - -C /
-
 ADD config/vhost.conf /etc/nginx/sites-enabled/default
 ADD start.sh /root/start.sh
 
