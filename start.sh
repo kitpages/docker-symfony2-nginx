@@ -1,7 +1,6 @@
 #!/bin/bash
 cd /var/www
 
-chmod 755 -R .
 rm -rf app/cache/*
 php app/console c:c --env=prod --no-debug
 php app/console c:w
