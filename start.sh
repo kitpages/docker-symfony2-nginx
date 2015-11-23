@@ -5,6 +5,11 @@ rm -rf app/cache/*
 php app/console c:c --env=prod --no-debug
 php app/console c:w
 
+if [ -n "$SF_DB_CREATE" ]
+  then
+  php app/console doctrine:database:create --if-not-exists
+fi
+
 if [ -n "$SF_DB_MIGRATE" ]
   then
   php app/console doctrine:migration:migrate -n
