@@ -2,8 +2,8 @@
 cd /var/www
 
 rm -rf app/cache/*
-php app/console c:c --env=prod --no-debug
-php app/console c:w
+php app/console cache:clear --env=prod --no-debug
+php app/console cache:warmup
 
 if [ -n "$SF_DB_CREATE" ]
   then
