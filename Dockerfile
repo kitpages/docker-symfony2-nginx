@@ -32,6 +32,8 @@ ADD start.sh /root/start.sh
 
 VOLUME ["/var/www", "/var/log/nginx/"]
 
+WORKDIR /var/www
+
 EXPOSE 80
 
 CMD ["/bin/bash", "/root/start.sh"]
