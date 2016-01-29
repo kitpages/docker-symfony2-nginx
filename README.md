@@ -38,7 +38,3 @@ Docker is accessible on http://localhost:8080/app.php
 
 ## Exposed port
 * 80 : nginx
-
-## Exposed volume
-* /var/www
-* /var/log/nginx
