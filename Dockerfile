@@ -30,8 +30,6 @@ RUN echo 'root:root' | chpasswd
 ADD config/vhost.conf /etc/nginx/sites-enabled/default
 ADD start.sh /root/start.sh
 
-VOLUME ["/var/www", "/var/log/nginx/"]
-
 WORKDIR /var/www
 
 EXPOSE 80
