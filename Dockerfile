@@ -3,6 +3,7 @@ FROM debian:jessie
 MAINTAINER Elie Charra <elie.charra [at] kitpages.fr>
 
 RUN apt-get -qq update && apt-get -qq -y --no-install-recommends install \
+    supervisor \
     git \
     ca-certificates \
     nginx \
@@ -21,10 +22,10 @@ RUN apt-get -qq update && apt-get -qq -y --no-install-recommends install \
     echo "daemon off;" >> /etc/nginx/nginx.conf
 
 COPY config/vhost.conf /etc/nginx/sites-enabled/default
-COPY start.sh /root/start.sh
+COPY config/supervisord.conf /etc/supervisor/supervisord.conf
 
 WORKDIR /var/www
 
 EXPOSE 80
 
-CMD ["/bin/bash", "/root/start.sh"]
+CMD ["/usr/bin/supervisord", "-n"]
