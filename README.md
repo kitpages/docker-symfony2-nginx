@@ -30,9 +30,6 @@ docker run -e SF_DB_MIGRATE=1 -v /home/user/symfony2:/var/www -p 8080:80 -d kitp
 Docker is accessible on http://localhost:8080/app.php
 
 ## Package included
-* htop
-* curl
-* vim
 * nginx
 * php5-fpm
 * php5-cli
