@@ -1,5 +1,7 @@
 # docker-symfony2
 
+[![](https://badge.imagelayers.io/kitpages/symfony2-nginx:latest.svg)](https://imagelayers.io/?images=kitpages/symfony2-nginx:latest 'Get your own badge on imagelayers.io')
+
 Docker for symfony2 application.
 
 Based on Ubuntu 14.04.
