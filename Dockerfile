@@ -2,8 +2,9 @@ FROM debian:jessie
 
 MAINTAINER Elie Charra <elie.charra [at] kitpages.fr>
 
-RUN apt-get update && apt-get -y install \
+RUN apt-get update && apt-get -y --no-install-recommends install \
     git \
+    ca-certificates \
     nginx \
     php5 \
     php5-cli \
