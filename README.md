@@ -23,13 +23,6 @@ Then
 docker run -v /home/user/symfony2:/var/www -p 8080:80 -d kitpages/symfony2-nginx
 ```
 
-### Environnement
-
-To run doctrine migrations :
-```bash
-docker run -e SF_DB_MIGRATE=1 -v /home/user/symfony2:/var/www -p 8080:80 -d kitpages/symfony2-nginx
-```
-
 Docker is accessible on http://localhost:8080/app.php
 
 ## Package included
