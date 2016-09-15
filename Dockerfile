@@ -1,6 +1,6 @@
 FROM debian:jessie
 
-MAINTAINER Elie Charra <elie.charra [at] kitpages.fr>
+MAINTAINER Elie Charra <elie.charra [at] kibatic.com>
 
 RUN apt-get -qq update && apt-get -qq -y --no-install-recommends install \
     git \
